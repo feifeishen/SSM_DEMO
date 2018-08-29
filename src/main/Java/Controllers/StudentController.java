@@ -2,6 +2,7 @@ package Controllers;
 
 import Entity.Student;
 import Service.IStudentService;
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ public class StudentController {
     public String Get() {
         List<Student> students = service.selectByCondition(new Student());
         String jsonResult = com.alibaba.fastjson.JSON.toJSONString(students);
+        System.out.print("test");
         return jsonResult;
     }
 }
